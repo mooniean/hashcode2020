@@ -17,11 +17,13 @@ with open(path_data) as f:
     scores_of_books = np.asarray(lines[1].split(), int)
     main_dict = {idx: val for idx, val in enumerate(scores_of_books)}
     line_index = 2
-    libraries = {}
-    for lib_index in range(int(n_libraries)):
-        libraries[lib_index] = [np.asarray(lines[line_index].split(), int),
+    #libraries = {}
+    libraries = []
+    for lib_index in range(n_libraries):
+
+        libraries.append([lib_index,np.asarray(lines[line_index].split(), int),
                                 np.asarray(lines[line_index + 1].split(), int),
-                                score(np.asarray(lines[line_index + 1].split(), int), scores_of_books)]
+                                score(np.asarray(lines[line_index + 1].split(), int), scores_of_books)])
         line_index += 2
 
 print(n_books, n_libraries, n_days)
