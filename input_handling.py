@@ -25,8 +25,7 @@ with open(path_data) as f:
         line_index += 2
 
 print(n_books, n_libraries, n_days)
-print(scores_of_books)
+print(main_dict)
 print(libraries)
 
-keys = list(range(n_books))
-dict(zip(keys, [None] * len(keys)))
+
