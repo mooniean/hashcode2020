@@ -13,18 +13,20 @@ path_data = os.path.join("datasets", "a_example.txt")  # CHECK
 
 with open(path_data) as f:
     lines = f.readlines()
-    number_of_books, number_of_libraries, number_of_days = lines[0].split()
+    n_books, n_libraries, n_days = np.asarray(lines[0].split()).astype(int)
     scores_of_books = np.asarray(lines[1].split(), int)
+    main_dict = {idx: val for idx, val in enumerate(scores_of_books)}
     line_index = 2
     libraries = {}
-    for lib_index in range(int(number_of_libraries)):
+    for lib_index in range(int(n_libraries)):
         libraries[lib_index] = [np.asarray(lines[line_index].split(), int),
                                 np.asarray(lines[line_index + 1].split(), int),
                                 score(np.asarray(lines[line_index + 1].split(), int), scores_of_books)]
         line_index += 2
 
-
-print(number_of_books, number_of_libraries, number_of_days)
+print(n_books, n_libraries, n_days)
 print(scores_of_books)
 print(libraries)
 
+keys = list(range(n_books))
+dict(zip(keys, [None] * len(keys)))
