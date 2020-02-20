@@ -87,6 +87,11 @@ for i,v in enumerate(liblines):
 
 print f
 
+outfile = 'out_a.txt'
+
+with open(outfile,'w+') as file:
+    file.write(f)
+
 # Ts = []
 
 # worklist = []
