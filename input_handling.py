@@ -15,3 +15,4 @@ with open(path_data) as f:
         line_index += 2
     print(number_of_books, number_of_libraries, number_of_days)
     print(scores_of_books)
+    print()
