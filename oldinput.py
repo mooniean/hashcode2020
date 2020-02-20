@@ -48,20 +48,44 @@ count = 1
 z = []
 ls = []
 
+f = ''
+
+liblines=[]
+booklines=[]
 
 for day in range(days):
     scores = []
     dzs = []
+    if len(ls) == len(d):
+        break
     for lib_i,lib in d.iteritems():
         if lib_i in ls:
             continue
         Tj = lib[0][1]
         Mj = lib[0][2]
         score,dZ = workfunction.maxScore(s,lib[1],z,days,day,Tj,Mj)
-        scores.append(score)
+        scores.append((lib_i,score,dZ))
         dzs.append(dZ)
-    ls.append(0)
-    print np.max(scores)
+    scores= sorted(scores,key=getScore,reverse=True)
+
+    libsubm = '{} {}\n'.format(scores[0][0],len(dZ))
+    booksubm = ''
+    for b in dZ:
+        booksubm+=str(b)+' '
+    booksubm+='\n'
+    liblines.append(libsubm)
+    booklines.append(booksubm)
+    ls.append(scores[0][0])
+    z += scores[0][2]
+    
+
+f+='{}\n'.format(len(ls))
+
+for i,v in enumerate(liblines):
+    f+=liblines[i]
+    f+=booklines[i]
+
+print f
 
 # Ts = []
 
