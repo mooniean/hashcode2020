@@ -22,6 +22,9 @@ with open(path_data) as f:
                                 np.asarray(lines[line_index + 1].split(), int),
                                 score(np.asarray(lines[line_index + 1].split(), int), scores_of_books)]
         line_index += 2
-    print(number_of_books, number_of_libraries, number_of_days)
-    print(scores_of_books)
-    print(libraries)
+
+
+print(number_of_books, number_of_libraries, number_of_days)
+print(scores_of_books)
+print(libraries)
+
