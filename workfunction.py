@@ -16,7 +16,7 @@ def workfunction(D,d,T,M,N):
 def maxScore(s,B,Z,D,d,T,M):
 	#s is the ordered score list for all books remaining
 	#B is the list of books for library j
-	#Z is the global worklist
+	#Z is the global worklist of books
 	#D is the number of days total
 	#d is the day of signup
 	#T is the time required for signup for library j
