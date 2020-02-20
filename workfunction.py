@@ -27,5 +27,3 @@ def maxScore(s,B,Z,D,d,T,M):
 	dZ = b[:w]
 	return np.sum([s[i] for i in dZ]),dZ
 
-for i in range(int(1E5)):
-	maxScore([100,50,2,1],[1,2,3],[2,3],3,0,1,1)
